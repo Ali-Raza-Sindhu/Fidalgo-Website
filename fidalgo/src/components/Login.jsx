@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import img from '../assets/user-box.jpg'
+import { Link } from 'react-router-dom';
 
 
 const Login = () => {
@@ -23,7 +24,7 @@ const Login = () => {
             </h1>
             <button
               onClick={() => setIsSignIn(!isSignIn)}
-              className="bg-[#e6b15f] px-26 rounded-xl text-black py-3 hover:bg-black transition-all duration-300 cursor-pointer"
+              className="bg-[#e6b15f] px-26 rounded-xl text-black py-3 hover:bg-black hover:text-white transition-all duration-300 cursor-pointer"
             >
               {isSignIn ? "Sign Up" : "Sign In"}
             </button>
@@ -65,18 +66,18 @@ const Login = () => {
                   <p>Remember me</p>
                 </span>
               )}
-              <button className="bg-[#e6b15f] px-30 rounded-xl text-black py-3 hover:bg-black transition-all duration-300 cursor-pointer">
+              <button className="bg-[#e6b15f] px-30 rounded-xl text-black py-3 hover:bg-black hover:text-white transition-all duration-300 cursor-pointer">
                 {isSignIn ? "Sign In" : "Sign Up"}
               </button>
 
               {isSignIn ? (
                 <span className="flex flex-col gap-3">
-                  <p className="hover:text-red-400 transition-all duration-300 cursor-pointer text-lg underline">
-                    Lost your Password.
+                  <p className="hover:text-[#e6b15f] transition-all duration-300 cursor-pointer text-lg underline">
+                    <Link to='/password'>Lost your Password.</Link>
                   </p>
                   <p
                     onClick={() => setIsSignIn(!isSignIn)}
-                    className="hover:text-red-400 transition-all duration-300 cursor-pointer text-lg hover:underline "
+                    className="hover:text-[#e6b15f] transition-all duration-300 cursor-pointer text-lg hover:underline "
                   >
                     Create Account
                   </p>
@@ -84,7 +85,7 @@ const Login = () => {
               ) : (
                 <p
                   onClick={() => setIsSignIn(!isSignIn)}
-                  className="hover:text-red-400 transition-all duration-300 cursor-pointer text-lg "
+                  className="hover:text-[#e6b15f] transition-all duration-300 cursor-pointer text-lg "
                 >
                   Don't have an Account
                 </p>
